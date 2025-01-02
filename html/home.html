@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menù Ristorante</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header class="menu-header">
+        <nav class="menu-nav">
+            <ul class="menu-tabs">
+                <li><a href="home.html" class="active">UniEat</a></li>
+                <li><a href="METODO_PAGAMENTO.html">Carrello</a></li>
+                <li>
+                    <a href="#" id="logout-button">Logout</a>
+                    <div id="logout-menu" class="hidden">
+                        <p id="logout-submit">Esci</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-container">
+        <h1>Visualizza il nostro menu</h1>
+        <div class="menu-grid">
+            <!-- PRIMI -->
+            <div class="menu-item">
+                <img src="pasta.png" alt="Primi">
+                <h3>PRIMI</h3>
+                <a href="primi.html"><button>PER SAPERNE DI PIÙ</button></a>
+            </div>
+            <!-- SECONDI -->
+            <div class="menu-item">
+                <img src="secondo.png" alt="Secondi">
+                <h3>SECONDI</h3>
+                <a href="secondi.html"><button>PER SAPERNE DI PIÙ</button></a>
+            </div>
+            <!-- CONTORNI -->
+            <div class="menu-item">
+                <img src="contorno.png" alt="Contorni">
+                <h3>CONTORNI</h3>
+                <a href="contorni.html"><button>PER SAPERNE DI PIÙ</button></a>
+            </div>
+            <!-- BEVANDE -->
+            <div class="menu-item">
+                <img src="bevanda.png" alt="Bevande">
+                <h3>BEVANDE</h3>
+                <a href="bevande.html"><button>PER SAPERNE DI PIÙ</button></a>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

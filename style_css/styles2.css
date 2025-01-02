@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'); /* Importa il font 'Poppins' per lo stile del testo */
+
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --primary-color: #ffffff;
+    --secondary-color: #20947D;
+    --hover-bg-color: #162938;
+    --text-color: #ffffff;
+    
+    
+}
+
+* {
+    margin: 0; /* Rimuove margini predefiniti */
+    padding: 0; /* Rimuove padding predefiniti */
+    box-sizing: border-box; /* Include padding e bordi nelle dimensioni totali degli elementi */
+    font-family: 'Poppins', sans-serif; /* Font globale */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('unie7.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+.menu-header {
+    position: fixed; 
+    top: 0; 
+    left: 0; /* Allinea l'intestazione al bordo sinistro */
+    width: 100%; /* Larghezza completa della finestra */
+    padding: 20px 100px; /* Aggiunge spazio interno all'intestazione */
+    justify-content: space-between; /* Distribuisce uniformemente gli elementi */
+    align-items: center; /* Allinea verticalmente gli elementi */
+    z-index: 99; /* Mantiene l'intestazione sopra gli altri elementi */
+}
+
+.menu-tabs {
+    display: flex; /* Posiziona i link uno accanto all'altro */
+    list-style: none; /* Rimuove i punti elenco */
+    padding: 0; /* Elimina la spaziatura interna della lista */
+}
+
+.menu-tabs a {
+    position: relative; 
+    font-size: 1.1em; /* Dimensione del font per i link */
+    color: white; /* Colore del testo bianco */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: 500; /* Imposta uno spessore medio del font */
+    margin-left: 40px; /* Aggiunge spazio tra i link */
+    
+}
+
+
+.menu-tabs a::after {
+    content: ''; /* Crea una linea sotto */
+    position: absolute; /* Posiziona l'elemento sotto il link */
+    left: 0;
+    bottom: -6px; /* Posiziona la linea sotto il testo */
+    width: 100%; /* La linea copre tutta la larghezza  */
+    height: 3px; /* Altezza della linea */
+    background: var(--text-color); /* Linea bianca */
+    border-radius: 5px; /* Angoli arrotondati della linea */
+    transform-origin: right; /* La linea inizia da destra */
+    transform: scaleX(0); /* La linea è inizialmente nascosta */
+    transition: transform 0.5s; 
+}
+
+.menu-tabs a:hover::after {
+    transform: scaleX(1); /* La linea si espande al passaggio del mouse */
+    transform-origin: left; /* La linea si espande da sinistra verso destra */
+}
+
+.container {
+    text-align: center; /* Centra il testo */
+    padding: 40px 20px; /* Spaziatura interna */
+    background: transparent; /* Sfondo semitrasparente */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px; /* Angoli arrotondati */
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    max-width: 1200px; /* Larghezza massima */
+    margin-top: 100px; /* Spaziatura rispetto all'intestazione */
+}
+
+.payment-option {
+    display: flex; /* Layout flessibile */
+    justify-content: center; /* Centra il contenuto */
+    align-items: center; 
+    width: 300px; /* Larghezza del pulsante */
+    height: 60px; /* Altezza del pulsante */
+    background-color: var(--secondary-color); 
+    border-radius: 25px; /* Angoli arrotondati */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Ombra */
+    flex-shrink: 0; /* Impedisce il ridimensionamento */
+    margin-top: 10px; /* Spaziatura superiore */
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease; /* Transizione fluida */
+}
+
+.payment-option:hover {
+    background-color: var(--hover-bg-color); /* Cambia colore al passaggio del mouse */
+    transform: scale(1.05); /* Effetto zoom al passaggio del mouse */
+}
+
+.button {
+    font-size: 18px; /* Dimensione del testo */
+    font-weight: bold; /* Grassetto */
+    color: var(--text-color); /* Testo bianco */
+    text-align: center; /* Allinea il testo al centro */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    white-space: nowrap; /* Impedisce la rottura del testo */
+    background-color: transparent; /* Sfondo trasparente */
+    border: none; /* Rimuove i bordi */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+}
+
+.carrello-container {
+    width: 100%; /* Larghezza completa */
+    max-width: 600px; /* Larghezza massima */
+    background-color: #f0f0f0;
+    border-radius: 8px; /* Angoli arrotondati */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ombra */
+    padding: 15px; /* Spaziatura interna */
+    overflow-y: auto; /* Aggiunge lo scroll verticale se necessario */
+    max-height: 300px; /* Altezza massima */
+}
+
+.cart-grid {
+    display: flex; /* Layout flessibile */
+    flex-direction: column; /* Elementi disposti in colonna */
+    gap: 15px; /* Spaziatura tra gli elementi */
+}
+
+.cart-item {
+    display: flex; /* Layout flessibile */
+    align-items: center; /* Allinea verticalmente il contenuto */
+    border-bottom: 1px solid #ccc; /* Bordo inferiore grigio chiaro */
+    padding-bottom: 10px; /* Spaziatura sotto */
+    margin-bottom: 10px; /* Spaziatura esterna sotto */
+}
+
+.cart-item-img {
+    width: 80px; /* Larghezza dell'immagine */
+    height: 80px; /* Altezza dell'immagine */
+    margin-right: 15px; /* Spaziatura a destra */
+    border-radius: 8px; /* Angoli arrotondati */
+    object-fit: cover; /* Ritaglia l'immagine mantenendo le proporzioni */
+}
+
+.cart-item-details {
+    flex: 1; /* Occupa lo spazio rimanente */
+}
+
+.cart-item-details h4 {
+    margin: 0 0 5px 0; /* Rimuove marginii superiori e inferiori */
+    font-size: 18px; /* Dimensione del testo */
+    color: var(--button-text-color); /* Testo blu scuro */
+}
+
+.cart-item-details p {
+    margin: 0; /* Rimuove i margini */
+    color: #ffffff; /* Testo wht */
+}
+
+.remove-btn {
+    background-color: #dc3545; /* Rosso per il bottone di rimozione */
+    color: var(--text-color); /* Testo bianco */
+    border: none; /* Rimuove i bordi */
+    padding: 8px 12px; /* Spaziatura interna */
+    border-radius: 5px; /* Angoli arrotondati */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    transition: background-color var(--transition-speed) ease; /* Transizione fluida */
+}
+
+.remove-btn:hover {
+    background-color: #bd2130; /* Rosso scuro per hover */
+}
+
+.cart-total {
+    text-align: right; /* Allinea il testo a destra */
+    font-size: 20px; /* Dimensione del testo */
+    margin-top: 10px; /* Spaziatura superiore */
+    font-weight: bold; /* Grassetto */
+    color: var(--button-text-color); /* Testo wht */
+}
+
+/* Stile responsive per schermi piccoli */
+@media (max-width: 768px) {
+    .menu-grid {
+        flex-direction: column; /* Dispone gli elementi in una colonna */
+        align-items: center; /* Centra gli elementi */
+    }
+}
+
+#logout-menu {
+    position: absolute;
+    top: 100%; /* Posiziona sotto il pulsante Logout */
+    left: 300; 
+    background-color: rgba(20, 20, 20, 0.9); /* Sfondo scuro semi-trasparente */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra */
+    z-index: 100;
+}
+
+#logout-submit {
+    color: white; /* Colore del testo bianco */
+    margin: 0;
+    padding: 5px 10px;
+    cursor: pointer; /* Cambia il cursore al passaggio */
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#logout-submit:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo chiaro al passaggio */
+    border-radius: 3px;
+}
+
+.hidden {
+    display: none; /* Nasconde il menù */
+}
+
+#prenotazione-messaggio {
+    margin: 0 auto;
+    margin-bottom: -10px; /* Aggiunge uno spazio sotto il messaggio */
+    color: green; /* Colore del messaggio */
+    font-weight: bold;
+    text-align: center;
+    display: none; /* Nasconde il messaggio inizialmente */
+    font-size: 2em;
+}

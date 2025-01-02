@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+ 
+    <header class="menu-header">
+        <nav class="menu-nav">
+            <ul class="menu-tabs">
+                <li><a href="home.html">UniEat</a></li>
+                <li><a href="METODO_PAGAMENTO.html" class="active">Carrello</a></li>
+                <li>
+                    <a href="#" id="logout-button">Logout</a>
+                    <div id="logout-menu" class="hidden">
+                        <p id="logout-submit">Esci</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div id="prenotazione-messaggio">
+        Prenotazione effettuata con successo!
+    </div>
+
+    <!-- Carrello -->
+    <div class="container">
+        <h1>Il tuo Carrello</h1>
+        <div id="carrello-container"></div>
+
+        <!-- Pulsanti di pagamento -->
+        <div class="payment-option">
+            <button class="button" onclick="pagaOra()">PRENOTA</button>
+        </div>
+    </div>
+    <script>
+    // Mostra il messaggio di prenotazione effettuata
+    function pagaOra() {
+        const messaggio = document.getElementById('prenotazione-messaggio');
+        messaggio.style.display = 'block'; // Mostra il messaggio
+    }
+    
+    // Gestione del menu logout
+    document.addEventListener('DOMContentLoaded', () => {
+        const logoutButton = document.getElementById('logout-button');
+        const logoutMenu = document.getElementById('logout-menu');
+        const logoutSubmit = document.getElementById('logout-submit');
+    
+        
+        logoutButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            logoutMenu.classList.toggle('hidden'); // Mostra o nasconde il menù
+        });
+    
+        logoutSubmit.addEventListener('click', () => {
+            window.location.href = 'Untitled-1.html'; // Reindirizza alla pagina di login
+        });
+    });
+    </script>
+    <script src="carrello.js"></script>
+</body>
+</html>

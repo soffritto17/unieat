@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menù Ristorante</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header class="menu-header">
+        <nav class="menu-nav">
+            <ul class="menu-tabs">
+                <li><a href="home.html" class="active">UniEat</a></li>
+                <li><a href="METODO_PAGAMENTO.html">Carrello</a></li>
+                <li>
+                    <a href="#" id="logout-button">Logout</a>
+                    <div id="logout-menu" class="hidden">
+                        <p id="logout-submit">Esci</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-container">
+        <h2>Bevande</h2>
+        <div class="menu-grid">
+           
+            <div class="menu-item">
+                <h3>ACQUA</h3>
+                <button onclick="addToCart('ACQUA', 1)">AGGIUNGI AL CARRELLO</button>
+            </div>
+            
+            <div class="menu-item">
+                <h3>COCA COLA</h3>
+                <button onclick="addToCart('COCA COLA', 7)">AGGIUNGI AL CARRELLO</button>
+            </div>
+          
+            <div class="menu-item">
+                <h3>SPRITE</h3>
+                <button onclick="addToCart('SPRITE', 9)">AGGIUNGI AL CARRELLO</button>
+            </div>
+
+
+        </div>
+    </section>
+    <script src="carrello.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

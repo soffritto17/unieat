@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'); /* Importa il font 'Poppins' per lo stile del testo */
+
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  --primary-color: #162938;
+  --secondary-color: #20947D;
+  --hover-bg-color: #20947D;
+  --text-color: #ffffff;
+}
+
+* {
+    margin: 0; /* Rimuove margini predefiniti */
+    padding: 0; /* Rimuove padding predefiniti */
+    box-sizing: border-box; /* Include padding e bordi nelle dimensioni totali degli elementi */
+    font-family: 'Poppins', sans-serif; /* Font globale */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('unie7.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    color: var(--text-color);
+}
+
+header {
+    position: fixed; 
+    top: 0; /* Posiziona l'intestazione nella parte superiore */
+    left: 0; /* Allinea l'intestazione al bordo sinistro */
+    width: 100%; /* Larghezza completa della finestra */
+    padding: 20px 100px; /* Aggiunge spazio interno all'intestazione */
+    justify-content: space-between; 
+    align-items: center; 
+    z-index: 99; /* Mantiene l'intestazione sopra gli altri elementi */
+}
+
+
+
+.menu-tabs {
+    display: flex; /* Posiziona i link uno accanto all'altro */
+    list-style: none; /* Rimuove i punti elenco */
+    padding: 0; /* Elimina la spaziatura interna della lista */
+}
+
+.menu-tabs a {
+  position: relative; /* Necessario per gli effetti del link */
+  font-size: 1.1em; /* Dimensione del font per i link */
+  color: white; /* Colore del testo bianco */
+  text-decoration: none; /* Rimuove la sottolineatura */
+  font-weight: 500; /* Imposta uno spessore medio del font */
+  margin-left: 40px; /* Aggiunge spazio tra i link */
+}
+
+
+
+.menu-tabs a::after {
+    content: ''; /* Crea una linea decorativa sotto il link */
+    position: absolute; /* Posiziona l'elemento sotto il link */
+    left: 0;
+    bottom: -6px; /* Posiziona la linea decorativa appena sotto il testo */
+    width: 100%; /* La linea copre tutta la larghezza del link */
+    height: 3px; /* Altezza della linea decorativa */
+    background: var(--text-color); /* Linea bianca */
+    border-radius: 5px; /* Angoli arrotondati della linea */
+    transform-origin: right; /* La linea inizia da destra */
+    transform: scaleX(0); /* La linea è inizialmente nascosta */
+    transition: transform 0.5s; /* Effetto di espansione fluido */
+}
+
+.menu-tabs a:hover::after {
+    transform: scaleX(1); /* La linea si espande al passaggio del mouse */
+    transform-origin: left; /* La linea si espande da sinistra verso destra */
+}
+.container {
+    text-align: center;
+  }
+
+  .menu-container {
+    text-align: center; /* Centra il testo */
+    padding: 40px 20px; /* Spaziatura interna */
+    background: transparent;; /* Sfondo semitrasparente */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px; /* Angoli arrotondati */
+    backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    max-width: 1200px; /* Larghezza massima */
+    margin-top: 100px; /* Spaziatura rispetto all'intestazione */
+}
+
+.menu-grid {
+    display: flex; 
+    justify-content: center; /* Centra gli elementi */
+    gap: 20px; /* Spaziatura tra gli elementi */
+    flex-wrap: wrap; /* Permette agli elementi di andare a capo */
+}
+
+.menu-item {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 20px; /* Spaziatura interna */
+    text-align: center; /* Centra il contenuto */
+    width: 250px; /* Larghezza fissa */
+    margin: 10px; /* Spaziatura tra gli elementi */
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed); /* Transizioni fluide */
+}
+
+.menu-item:hover {
+    transform: scale(1.05); /* Ingrandisce leggermente al passaggio del mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Ombra più marcata per hover */
+}
+
+
+.menu-item img {
+    max-width: 100%; 
+    height: auto; /* Mantiene le proporzioni */
+    border-radius: 8px; /* Angoli arrotondati */
+    margin-bottom: 15px; /* Spaziatura sotto l'immagine */
+}
+
+.menu-item h3 {
+    margin: 10px 0; /* Spaziatura sopra e sotto il titolo */
+    font-size: 1.4em; /* Dimensione del testo */
+    color: var(--text-color); /* Colore bianco */
+}
+
+/* Pulsante 'Aggiungi al carrello' */
+.menu-item button {
+    background-color: var(--secondary-color); 
+    color: var(--text-color); /* Testo bianco */
+    border: none; /* Rimuove i bordi */
+    border-radius: 5px; /* Angoli arrotondati */
+    padding: 10px 15px; /* Spaziatura interna */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+    font-size: 1em; /* Dimensione del testo */
+    transition: background-color var(--transition-speed); /* Transizione fluida */
+}
+
+.menu-item button:hover {
+    background-color: var(--hover-bg-color); /* Cambia colore al passaggio del mouse */
+    color: var(--text-color); /* Mantiene il testo bianco */
+}
+
+/* Stile responsive per schermi piccoli */
+@media (max-width: 768px) {
+    .menu-container {
+        padding: 20px; 
+    }
+
+    .menu-grid {
+        flex-direction: column; /* Dispone gli elementi in una colonna */
+        align-items: center; /* Centra gli elementi */
+    }
+
+    .menu-item {
+        width: 100%; /* Gli elementi occupano tutta la larghezza disponibile */
+        max-width: 300px; 
+    }
+}
+
+#logout-menu {
+    position: absolute;
+    top: 100%; /* Posiziona sotto il pulsante Logout */
+    left: 300; /* Allinea a sinistra */
+    background-color: rgba(20, 20, 20, 0.9); /* Sfondo scuro semi-trasparente */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra */
+    z-index: 100;
+}
+
+#logout-submit {
+    color: white; /* Colore del testo bianco */
+    margin: 0;
+    padding: 5px 10px;
+    cursor: pointer; /* Cambia il cursore al passaggio */
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#logout-submit:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo chiaro al passaggio */
+    border-radius: 3px;
+}
+
+.hidden {
+    display: none; /* Nasconde il menù */
+}
+
