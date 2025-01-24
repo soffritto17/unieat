@@ -61,19 +61,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/Untitled-1.html');
 });
 
-// Home (protetta)
-/*
-app.get('/home', (req, res) => {
-    const token = req.headers.authorization?.split(' ')[1];
-    if (!token) return res.status(401).json({ message: 'Accesso negato' });
-
-    try {
-        jwt.verify(token, 'secret_key');
-        res.sendFile(__dirname + '/public/home.html');
-    } catch (error) {
-        res.status(403).json({ message: 'Token non valido' });
-    }
-});*/
 app.get('/home', (req, res) => {
     res.sendFile(__dirname + '/public/home.html');
 });
