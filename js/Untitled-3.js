@@ -27,11 +27,9 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
             alert(error.message || 'Errore durante la registrazione');
         }
     } catch (error) {
-        console.error('Errore:', error);
-        console.error('Errore:', err.message);
-
+        console.error('Errore:', error); // Stampa il messaggio di errore, se disponibile
         alert('Errore imprevisto. Riprova più tardi.');
-    }
+    }    
 });
 
 
@@ -82,6 +80,3 @@ iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 })
 
-iconClose.addEventListener('click', () => {
-    wrapper.classList.remove('active-popup');
-}); 
